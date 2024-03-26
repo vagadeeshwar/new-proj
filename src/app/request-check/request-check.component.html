@@ -1,1 +1,32 @@
-<p>request-check works!</p>
+<div class="form-container">
+    <div class="form-header">Request Cheque Book</div>
+
+    <div *ngIf="successMessage" class="success-message">
+        {{ successMessage }}
+    </div>
+
+    <form (ngSubmit)="submitForm()" #chequebookRequestForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" class="form-control" required
+                [(ngModel)]="formData.accountNumber" #accountNumber="ngModel">
+            <div *ngIf="accountNumber?.invalid && (accountNumber?.dirty || accountNumber?.touched)"
+                class="error-message">
+                <div *ngIf="accountNumber?.errors?.['required']">Account Number is required.</div>
+                <div *ngIf="accountNumber?.errors?.['maxLength']">Account Number cannot be more than 12 digits.</div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="numberOfCheques">Number of Cheques:</label>
+            <input type="number" id="numberOfCheques" name="numberOfCheques" class="form-control" required
+                [(ngModel)]="formData.numberOfCheques" #numberOfCheques="ngModel">
+            <div *ngIf="numberOfCheques?.invalid && (numberOfCheques?.dirty || numberOfCheques?.touched)"
+                class="error-message">
+                <div *ngIf="numberOfCheques?.errors?.['required']">Number of Cheques is required.</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="chequebookRequestForm.invalid">Submit</button>
+    </form>

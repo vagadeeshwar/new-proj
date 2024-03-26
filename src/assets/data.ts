@@ -21,7 +21,7 @@ export const account: AccountInfo =
     balance: 1500.00,
     lastTransactionDate: new Date("2023-12-01"),
     dob: new Date("1980-05-15"),
-    accountType: "Checking",
+    accountType: "Savings",
     currency: "USD",
     interestRate: 0.5,
     branchName: "Main Street",
