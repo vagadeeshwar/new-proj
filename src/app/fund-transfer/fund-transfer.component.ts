@@ -7,6 +7,7 @@ interface Transaction {
   type: string;
   amount: number;
   date: string;
+  receiver_account_number: string;
 }
 
 @Component({
@@ -23,11 +24,13 @@ export class FundTransferComponent {
   count: number = 0;
   transactionType: string = "withdraw"; // Default transaction type
   transactionHistory: Transaction[] = [];
+  account_number: string = "12345678908675";
+  receiver_account_number: string = "";
 
 
   // Method to perform transaction
   performTransaction(): void {
-    if (this.transactionType === 'withdraw') {
+    if (this.transactionType === 'withdraw' || this.transactionType === 'transact') {
       if (this.amount > this.balance) {
         alert(`Insufficient balance: $${this.balance}`);
       } else {
@@ -43,9 +46,11 @@ export class FundTransferComponent {
       id: ++this.count,
       type: this.transactionType,
       amount: this.amount,
-      date: new Date().toUTCString()
+      date: new Date().toUTCString(),
+      receiver_account_number: this.transactionType==='transact' ? this.receiver_account_number : this.account_number
     })
 
     this.amount = 0; // Reset amount after transaction
+    this.receiver_account_number = '0';
   }
 }

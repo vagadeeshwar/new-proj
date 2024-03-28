@@ -1,6 +1,6 @@
 export interface AccountInfo {
   accountHolderName: string;
-  accountNumber: number;
+  accountNumber: string;
   balance: number;
   lastTransactionDate: Date;
   dob: Date;
@@ -17,11 +17,11 @@ contactPhone: string;
 export const account: AccountInfo =
 {
     accountHolderName: "John Doe",
-    accountNumber: 1234567890,
+  accountNumber: "12345678908675",
     balance: 1500.00,
     lastTransactionDate: new Date("2023-12-01"),
     dob: new Date("1980-05-15"),
-    accountType: "Savings",
+    accountType: "Current",
     currency: "USD",
     interestRate: 0.5,
     branchName: "Main Street",
