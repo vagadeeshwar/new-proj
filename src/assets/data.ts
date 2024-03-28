@@ -1,6 +1,6 @@
 export interface AccountInfo {
   accountHolderName: string;
-  accountNumber: string;
+  accountNumber: number;
   balance: number;
   lastTransactionDate: Date;
   dob: Date;
@@ -17,11 +17,11 @@ contactPhone: string;
 export const account: AccountInfo =
 {
     accountHolderName: "John Doe",
-  accountNumber: "12345678908675",
+    accountNumber: 1234567890,
     balance: 1500.00,
     lastTransactionDate: new Date("2023-12-01"),
     dob: new Date("1980-05-15"),
-    accountType: "Current",
+    accountType: "Savings",
     currency: "USD",
     interestRate: 0.5,
     branchName: "Main Street",
@@ -34,102 +34,27 @@ export const account: AccountInfo =
 export const providers=[
   {
     "id": 1,
-    "name": "Service Provider 1",
-    "description": "Description of Service Provider 1"
+    "name": "Airtel",
+    "description": "With Airtel 5G Plus. Up to 30x faster. Know More. Get your prepaid SIM home delivered. Enjoy doorstep KYC, paperless process and quick activation."
   },
   {
     "id": 2,
-    "name": "Service Provider 2",
-    "description": "Description of Service Provider 2"
+    "name": "JioCinema",
+    "description": "JioCinema offers live and on-demand streaming of movies, TV shows, Voot shows, and sports in HD quality and multiple languages."
   },
   {
     "id": 3,
-    "name": "Service Provider 3",
-    "description": "Description of Service Provider 3"
+    "name": "BESCOM",
+    "description": "Pay your BESCOM electricity bills online with ease and convenience. View your billing history, payment status, and service request details."
   },
   {
     "id": 4,
-    "name": "Service Provider 4",
-    "description": "Description of Service Provider 4"
+    "name": "Vi (Vodafone Idea)",
+    "description": "Vodafone & Idea are now Vi Explore Vi Max Postpaid Plans, Prepaid, New Connection, Vi Games, Hungama Music on Vi App & many more."
   },
   {
     "id": 5,
-    "name": "Service Provider 5",
-    "description": "Description of Service Provider 5"
+    "name": "BSNL Portal",
+    "description": "BSNL Portal is the official website of Bharat Sanchar Nigam Limited, a leading telecom service provider in India."
   },
-  {
-    "id": 6,
-    "name": "Service Provider 6",
-    "description": "Description of Service Provider 6"
-  },
-  {
-    "id": 7,
-    "name": "Service Provider 7",
-    "description": "Description of Service Provider 7"
-  },
-  {
-    "id": 8,
-    "name": "Service Provider 8",
-    "description": "Description of Service Provider 8"
-  },
-  {
-    "id": 9,
-    "name": "Service Provider 9",
-    "description": "Description of Service Provider 9"
-  },
-  {
-    "id": 10,
-    "name": "Service Provider 10",
-    "description": "Description of Service Provider 10"
-  },
-  {
-    "id": 11,
-    "name": "Service Provider 11",
-    "description": "Description of Service Provider 11"
-  },
-  {
-    "id": 12,
-    "name": "Service Provider 12",
-    "description": "Description of Service Provider 12"
-  },
-  {
-    "id": 13,
-    "name": "Service Provider 13",
-    "description": "Description of Service Provider 13"
-  },
-  {
-    "id": 14,
-    "name": "Service Provider 14",
-    "description": "Description of Service Provider 14"
-  },
-  {
-    "id": 15,
-    "name": "Service Provider 15",
-    "description": "Description of Service Provider 15"
-  },
-  {
-    "id": 16,
-    "name": "Service Provider 16",
-    "description": "Description of Service Provider 16"
-  },
-  {
-    "id": 17,
-    "name": "Service Provider 17",
-    "description": "Description of Service Provider 17"
-  },
-  {
-    "id": 18,
-    "name": "Service Provider 18",
-    "description": "Description of Service Provider 18"
-  },
-  {
-    "id": 19,
-    "name": "Service Provider 19",
-    "description": "Description of Service Provider 19"
-  },
-  {
-    "id": 20,
-    "name": "Service Provider 20",
-    "description": "Description of Service Provider 20"
-  }
 ]
