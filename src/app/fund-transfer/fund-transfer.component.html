@@ -20,6 +20,10 @@
   <button (click)="performTransaction()">Submit</button>
 </div>
 
+<div>
+  {{msg}}
+</div>
+
 <h3>Transaction History</h3>
 <table>
   <tr>
@@ -29,7 +33,7 @@
     <th>Date</th>
     <th>Receiver Id</th>
   </tr>
-  <tr *ngFor="let transaction of transactionHistory">
+  <tr *ngFor="let transaction of recentTransactions">
     <td> {{transaction.id}}.</td>
     <td> {{ transaction.type }} </td>
     <td>${{ transaction.amount }}</td>

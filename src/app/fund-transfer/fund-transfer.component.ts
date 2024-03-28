@@ -26,31 +26,37 @@ export class FundTransferComponent {
   transactionHistory: Transaction[] = [];
   account_number: string = "12345678908675";
   receiver_account_number: string = "";
+  msg: string = "";
 
 
   // Method to perform transaction
   performTransaction(): void {
     if (this.transactionType === 'withdraw' || this.transactionType === 'transact') {
       if (this.amount > this.balance) {
-        alert(`Insufficient balance: $${this.balance}`);
+        this.msg = `Insufficient balance: $${this.balance}`;
+        return;
       } else {
         this.balance -= this.amount;
-        alert(`Withdrawal successful. New balance: $${this.balance}`);
+        this.msg = `${this.transactionType==='withdraw'?'Withdrawal':'Transaction'} of $${this.amount} successful.`;
       }
     } else if (this.transactionType === 'deposit') {
       this.balance += this.amount;
-      alert(`Deposit successful. New balance: $${this.balance}`);
+      this.msg = `Deposit of $${this.amount} successful.`;
     }
 
-    this.transactionHistory.push({
+    this.transactionHistory.unshift({
       id: ++this.count,
       type: this.transactionType,
       amount: this.amount,
       date: new Date().toUTCString(),
-      receiver_account_number: this.transactionType==='transact' ? this.receiver_account_number : this.account_number
+      receiver_account_number: this.transactionType === 'transact' ? this.receiver_account_number : this.account_number
     })
 
     this.amount = 0; // Reset amount after transaction
     this.receiver_account_number = '0';
+  }
+
+  get recentTransactions(): Transaction[] {
+    return this.transactionHistory.slice(-10);
   }
 }
