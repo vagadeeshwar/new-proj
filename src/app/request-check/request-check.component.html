@@ -1,8 +1,5 @@
 <div class="form-container">
     <div class="form-header">Request Cheque Book</div>
-    <div *ngIf="successMessage" class="success-message">
-        {{ successMessage }}
-    </div>
     <form [formGroup]="chequebookRequestForm" (ngSubmit)="submitForm()" novalidate>
         <div class="form-group">
             <label for="accountNumber">Account Number:</label>
@@ -24,5 +21,8 @@
             </div>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="chequebookRequestForm.invalid">Submit</button>
+        <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+        </div>
     </form>
 </div>
