@@ -1,37 +1,3 @@
-<!-- <div class="transaction-container">
-  <h2>Money Transaction</h2>
-  <div style="text-align: right; color: green;">Balance Amount: ${{balance}}</div>
-  <div>
-    <label for="transactionType">Transaction Type:</label>
-    <select id="transactionType" style="margin-left: 10px;" [(ngModel)]="transactionType">
-      <option value="withdraw">Withdraw</option>
-      <option value="deposit">Deposit</option>
-    </select>
-  </div>
-  <div>
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" name="amount" min="0" style="margin-left: 80px;" [(ngModel)]="amount" required>
-  </div>
-  <div>
-    <button (click)="performTransaction()">Submit</button>
-  </div>
-  <hr>
-  <h3>Transaction History</h3>
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Date</th>
-    </tr>
-    <tr *ngFor="let transaction of transactionHistory">
-      <td>{{transaction.id}}.</td>
-      <td>{{ transaction.type }}:</td>
-      <td>${{ transaction.amount }}</td>
-      <td>{{ transaction.date }}</td>
-    </tr>
-  </table>
-</div> -->
 <div class="transaction-container">
   <h2>Money Transaction</h2>
   <div style="text-align: right; color: green;">Balance Amount: ${{balance}}</div>
