@@ -15,7 +15,7 @@ export class RequestCheckComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.chequebookRequestForm = this.formBuilder.group({
-      accountNumber: ['', [Validators.required, Validators.maxLength(12), Validators.minLength(12)]],
+      accountNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{12}$/)]],
       numberOfCheques: [null, [Validators.required, Validators.min(1)]]
     });
   }

@@ -10,8 +10,7 @@
                 formControlName="accountNumber">
             <div *ngIf="accountNumber.invalid && (accountNumber.dirty || accountNumber.touched)" class="error-message">
                 <div *ngIf="accountNumber.errors?.['required']">Account Number is required.</div>
-                <div *ngIf="accountNumber.errors?.['maxlength']">Account Number has to be 12 digits.</div>
-                <div *ngIf="accountNumber.errors?.['minlength']">Account Number has to be 12 digits.</div>
+                <div *ngIf="accountNumber.errors?.['pattern']">Account Number has to be 12 digits.</div>
             </div>
         </div>
         <div class="form-group">

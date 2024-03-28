@@ -60,7 +60,12 @@
     color: white;
 }
 
-.btn:hover {
-    background-color: #0056b3;
-    /* Darker shade on hover */
+button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.success-message {
+    margin-top: 10px;
+    color: green;
 }
