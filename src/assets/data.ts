@@ -5,33 +5,33 @@ export interface AccountInfo {
   lastTransactionDate: Date;
   dob: Date;
   accountType: string; // e.g., "Checking", "Savings", "Credit Card", "Loan"
-currency: string; // e.g., "USD", "EUR", "GBP"
+  currency: string; // e.g., "USD", "EUR", "GBP"
   interestRate: number; // e.g., 0.5 for 0.5%
   branchName: string;
-branchCode: string;
-creationDate: Date;
-contactEmail: string;
-contactPhone: string;
+  branchCode: string;
+  creationDate: Date;
+  contactEmail: string;
+  contactPhone: string;
 }
 
 export const account: AccountInfo =
 {
-    accountHolderName: "John Doe",
-    accountNumber: 1234567890,
-    balance: 1500.00,
-    lastTransactionDate: new Date("2023-12-01"),
-    dob: new Date("1980-05-15"),
-    accountType: "Savings",
-    currency: "USD",
-    interestRate: 0.5,
-    branchName: "Main Street",
-    branchCode: "MS123",
-    creationDate: new Date("2010-06-01"),
-    contactEmail: "john.doe@example.com",
-    contactPhone: "555-1234",
+  accountHolderName: "John Doe",
+  accountNumber: 12345678908675,
+  balance: 1500.00,
+  lastTransactionDate: new Date("2023-12-01"),
+  dob: new Date("1980-05-15"),
+  accountType: "Savings",
+  currency: "USD",
+  interestRate: 0.5,
+  branchName: "Main Street",
+  branchCode: "MS123",
+  creationDate: new Date("2010-06-01"),
+  contactEmail: "john.doe@example.com",
+  contactPhone: "5551234111",
 };
 
-export const providers=[
+export const providers = [
   {
     "id": 1,
     "name": "Airtel",

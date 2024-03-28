@@ -45,7 +45,6 @@ export class RequestCardComponent {
 
   submitForm() {
     if (this.cardRequestForm.valid) {
-      alert('Form submitted');
       this.showSuccessMessage = true;
 
       this.cardRequestForm.reset();
