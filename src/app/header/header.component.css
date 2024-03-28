@@ -48,3 +48,16 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+
+.dropdown {
+    color: white;
+}
+
+label.dropdown{
+    padding-right: 8px;
+}
+
+select.dropdown {
+    background-color: #22226f;
+    border: none;
+}

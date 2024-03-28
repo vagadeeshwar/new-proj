@@ -1,95 +1,49 @@
-<form (ngSubmit)="submitForm()" #cardRequestForm="ngForm">
+<form [formGroup]="cardRequestForm" (ngSubmit)="submitForm()">
     <div class="form-container">
-            <div class="form-header">ATM Card Request</div>
+        <div class="form-header">ATM Card Request</div>
+        <div>
             <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" [(ngModel)]="fullName">
-            <div *ngIf="cardRequestForm.controls['fullName'].invalid && cardRequestForm.controls['fullName'].touched">
-                <p *ngIf="cardRequestForm.controls['fullName'].errors?.['required']">Full Name is required</p>
+            <input type="text" id="fullName" name="fullName" formControlName="fullName" required>
+            <div *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
+                <p *ngIf="fullName.errors?.['required']">Full Name is required</p>
             </div>
+        </div>
         <div>
             <label for="accountNumber">Account Number:</label>
-            <input type="text" id="accountNumber" name="accountNumber" [(ngModel)]="accountNumber">
-            <div *ngIf="cardRequestForm.controls['accountNumber'].invalid && cardRequestForm.controls['accountNumber'].touched">
-                <p *ngIf="cardRequestForm.controls['accountNumber'].errors?.['required']">Account Number is required</p>
+            <input type="text" id="accountNumber" name="accountNumber" formControlName="accountNumber" required>
+            <div *ngIf="accountNumber.invalid && (accountNumber.dirty || accountNumber.touched)">
+                <p *ngIf="accountNumber.errors?.['required']">Account Number is required</p>
+                <p *ngIf="accountNumber.errors?.['pattern']">Account Number has to be 12 digits.</p>
             </div>
         </div>
         <div>
             <label for="address">Address:</label>
-            <textarea id="address" name="address" [(ngModel)]="address"></textarea>
-            <div *ngIf="cardRequestForm.controls['address'].invalid && cardRequestForm.controls['address'].touched">
-                <p *ngIf="cardRequestForm.controls['address'].errors?.['required']">Address is required</p>
+            <textarea id="address" name="address" formControlName="address" required></textarea>
+            <div *ngIf="address.invalid && (address.dirty || address.touched)">
+                <p *ngIf="address.errors?.['required']">Address is required</p>
             </div>
         </div>
         <div>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" [(ngModel)]="email">
-            <div *ngIf="cardRequestForm.controls['email'].invalid && cardRequestForm.controls['email'].touched">
-                <p *ngIf="cardRequestForm.controls['email'].errors?.['required']">Email is required</p>
-                <p *ngIf="cardRequestForm.controls['email'].errors?.['email']">Please enter a valid email address</p>
+            <input type="email" id="email" name="email" formControlName="email" required email>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <p *ngIf="email.errors?.['required']">Email is required</p>
+                <p *ngIf="email.errors?.['email']">Please enter a valid email address</p>
             </div>
         </div>
         <div>
             <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber">
-            <div *ngIf="cardRequestForm.controls['phoneNumber'].invalid && cardRequestForm.controls['phoneNumber'].touched">
-                <p *ngIf="cardRequestForm.controls['phoneNumber'].errors?.['required']">Phone Number is required</p>
+            <input type="tel" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" required>
+            <div *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+                <p *ngIf="phoneNumber.errors?.['required']">Phone Number is required</p>
+                <p *ngIf="phoneNumber.errors?.['pattern']">Phone Number has to be 10 digits.</p>
             </div>
         </div>
         <div>
-            <button type="submit" [disabled]="!cardRequestForm.valid">Submit</button>
+            <button type="submit" [disabled]="cardRequestForm.invalid">Submit</button>
         </div>
         <div *ngIf="showSuccessMessage" class="success-message" style="text-align: center;">
             Your form has been submitted successfully!
         </div>
     </div>
-</form> -->
-
-<!-- app.component.html
-
-<!-- <form [formGroup]="cardRequestForm" (ngSubmit)="submitForm()" novalidate>
-    <div class="form-container">
-        <div class="form-header">ATM Card Request</div>
-        <div>
-            <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" formControlName="fullName">
-            <div *ngIf="cardRequestForm.get('fullName').invalid && cardRequestForm.get('fullName').touched">
-                <p *ngIf="cardRequestForm.get('fullName').errors?.required">Full Name is required</p>
-            </div>
-        </div>
-        <div>
-            <label for="accountNumber">Account Number:</label>
-            <input type="text" id="accountNumber" formControlName="accountNumber">
-            <div *ngIf="cardRequestForm.get('accountNumber').invalid && cardRequestForm.get('accountNumber').touched">
-                <p *ngIf="cardRequestForm.get('accountNumber').errors?.required">Account Number is required</p>
-            </div>
-        </div>
-        <div>
-            <label for="address">Address:</label>
-            <textarea id="address" formControlName="address"></textarea>
-            <div *ngIf="cardRequestForm.get('address').invalid && cardRequestForm.get('address').touched">
-                <p *ngIf="cardRequestForm.get('address').errors?.required">Address is required</p>
-            </div>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" formControlName="email">
-            <div *ngIf="cardRequestForm.get('email').invalid && cardRequestForm.get('email').touched">
-                <p *ngIf="cardRequestForm.get('email').errors?.required">Email is required</p>
-                <p *ngIf="cardRequestForm.get('email').errors?.email">Please enter a valid email address</p>
-            </div>
-        </div>
-        <div>
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" formControlName="phoneNumber">
-            <div *ngIf="cardRequestForm.get('phoneNumber').invalid && cardRequestForm.get('phoneNumber').touched">
-                <p *ngIf="cardRequestForm.get('phoneNumber').errors?.required">Phone Number is required</p>
-            </div>
-        </div>
-        <div>
-            <button type="submit" [disabled]="!cardRequestForm.valid">Submit</button>
-        </div>
-        <div *ngIf="showSuccessMessage" class="success-message">
-            Your form has been submitted successfully!
-        </div>
-    </div>
-</form> -->
+</form>

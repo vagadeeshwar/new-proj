@@ -7,7 +7,12 @@
         <li><a routerLink="/dashboard">Home</a></li>
         <li><a routerLink="/transfer">Fund Transfer</a></li>
         <li><a routerLink="/payments">Bill Payments</a></li>
-        <li><a routerLink="/req-check">Checkbook</a></li>
-        <li><a routerLink="/req-card">ATM Card</a></li>
+        <label for="req" class="dropdown">Request</label>
+        <select [(ngModel)]="selectedOption" id="req" (click)="onOptionSelected()" class="dropdown">
+            <option value="" disabled>Service</option>
+            <option value="checkbook">Checkbook</option>
+            <option value="card">ATM Card</option>
+        </select>
     </ul>
+
 </nav>

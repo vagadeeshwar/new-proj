@@ -1,44 +1,97 @@
-/* money-transaction.component.css */
-
-:host {
-  text-align: center;
+/* CSS for transaction container */
+.transaction-container {
+  border: 2px solid #ccc;
+  /* Border */
+  padding: 20px;
+  /* Padding */
+  margin-bottom: 20px;
+  /* Bottom margin */
+  border-radius: 5px;
+  /* Rounded corners */
+  background-color: #f9f9f9;
+  /* Background color */
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+/* CSS for headings */
+.transaction-container h2 {
+  color: #333;
+  /* Heading color */
 }
 
-input[type="number"] {
-  /* width: 100%; */
-  padding: 8px;
+
+
+.transaction-container h3 {
+  color: #000000;
+  /* Sub-heading color */
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+/* CSS for form elements */
+.transaction-container label {
+  font-weight: bold;
+  /* Bold label text */
+  margin-right: 20px;
+  /* Right margin for labels */
+}
+
+.transaction-container input[type="number"],
+.transaction-container select {
+  padding: 5px;
+  /* Padding for inputs and select */
   margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  /* Bottom margin for inputs and select */
+  width: 20%;
 }
 
-button {
-  background-color: #007bff;
+/* CSS for buttons */
+.transaction-container button {
+  padding: 8px 90px;
+  /* Padding for buttons */
+  background-color: #5facff;
+  /* Button background color */
   color: #fff;
+  /* Button text color */
   border: none;
-  padding: 10px 20px;
-  margin: 10px 0;
+  /* No border */
+  border-radius: 5px;
+  /* Rounded corners */
   cursor: pointer;
-  border-radius: 4px;
+  /* Cursor style */
+  margin-top: 10px;
+  margin-left: 14%;
 }
 
+.transaction-container button:hover {
+  background-color: #0056b3;
+  /* Darker background color on hover */
+}
+
+.transaction-container hr {
+  border: none;
+  /* No border */
+  border-top: 1px solid #ccc;
+  /* Solid border on top */
+  margin: 20px 0;
+  /* Margin for spacing */
+}
+
+/* CSS for table */
 table {
-  width: 75%;
-  margin: 0 auto;
-  border: 1px solid black;
-  margin-bottom: 16px;
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
 }
 
-td,
-th {
-  border: 1px solid black;
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
 }
 
-h3 {
-  padding: 32px 0;
+table th {
+  background-color: #f2f2f2;
 }
